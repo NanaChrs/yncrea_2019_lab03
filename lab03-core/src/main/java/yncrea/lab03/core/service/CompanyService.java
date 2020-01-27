@@ -2,6 +2,7 @@ package yncrea.lab03.core.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import yncrea.lab03.core.dao.CompanyDAO;
 import yncrea.lab03.core.entity.Company;
 
 import java.util.Map;
@@ -9,27 +10,30 @@ import java.util.Map;
 @Service
 @Transactional
 public class CompanyService {
-    //TODO inject a DAO
+    CompanyDAO dao;
 
+    public CompanyService() {
+        super();
+        this.dao = dao;
+    }
 
     public void deleteAll() {
-        //TODO implement
+        dao.deleteAll();
     }
 
 
     public void save(final Company company) {
-        //TODO implement
+        dao.save(company);
     }
 
 
     public long countAll() {
-        //TODO implement
-        return 0;
+        return dao.count();
     }
 
 
     public Map<String, Integer> getAllWithProjectCount() {
         //TODO return a map with the name of the company for the key and the count in the value
-       return null;
+       return dao.getAllByNameWithProjectCount();
     }
 }

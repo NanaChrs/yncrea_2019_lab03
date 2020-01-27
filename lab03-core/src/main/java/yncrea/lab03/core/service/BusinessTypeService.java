@@ -2,26 +2,30 @@ package yncrea.lab03.core.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import yncrea.lab03.core.dao.BusinessTypeDAO;
 import yncrea.lab03.core.entity.BusinessType;
 
 @Service
 @Transactional
 public class BusinessTypeService {
-    //TODO inject a DAO
+    BusinessTypeDAO dao;
 
+    public BusinessTypeService(BusinessTypeDAO dao) {
+        super();
+        this.dao = dao;
+    }
 
     public void deleteAll() {
-        //TODO implement
+        dao.deleteAll();
     }
 
 
     public void save(final BusinessType businessType) {
-        //TODO implement
+        dao.save(businessType);
     }
 
 
     public long countAll() {
-        //TODO implement
-        return 0;
+        return dao.count();
     }
 }
