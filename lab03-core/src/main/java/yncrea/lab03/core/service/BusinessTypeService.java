@@ -8,9 +8,9 @@ import yncrea.lab03.core.entity.BusinessType;
 @Service
 @Transactional
 public class BusinessTypeService {
-    BusinessTypeDAO dao;
+    private BusinessTypeDAO dao;
 
-    public BusinessTypeService(BusinessTypeDAO dao) {
+    public BusinessTypeService(final BusinessTypeDAO dao) {
         super();
         this.dao = dao;
     }

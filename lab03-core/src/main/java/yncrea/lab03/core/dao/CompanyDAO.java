@@ -8,6 +8,6 @@ import java.util.Map;
 
 public interface CompanyDAO extends CrudRepository<Company, Long> {
 
-    @Query("select c.name, c.projects.size from Company c")
-    Map<String, Integer> getAllByNameWithProjectCount();
+    //@Query("select c.name, c.projects.size from Company c")
+    //Map<String, Integer> getAllByNameWithProjectCount();
 }
